@@ -28,10 +28,10 @@ deps_b = parse_deps(deps_b_filename)
 
 for dep, ver in deps_a.items():
     if dep in deps_b and deps_b[dep] != ver:
-        print(f'Version mismatch A vs B: {dep}=={ver} vs. {dep}=={deps_b[dep]}')
+        print(f'Version mismatch {deps_a_filename} vs {deps_b_filename}: {dep}=={ver} vs. {dep}=={deps_b[dep]}')
     if dep not in deps_b:
-        print(f'Extra dep in A: {dep}=={ver}')
+        print(f'Extra dep in {deps_a_filename}: {dep}=={ver}')
 
 for dep, ver in deps_b.items():
     if dep not in deps_a:
-        print(f'Extra dep in B: {dep}=={ver}')
+        print(f'Extra dep in {deps_b_filename}: {dep}=={ver}')
